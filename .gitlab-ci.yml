@@ -21,7 +21,7 @@ deploy:
     script:
         - mvn package
     tags: 
-        - mmbbs 
+        - myrunner 
     only:
         - master
     artifacts:

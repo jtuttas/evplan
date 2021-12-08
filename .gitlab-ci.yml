@@ -1,0 +1,31 @@
+services:
+  - name: docker:dind
+
+variables:
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_DRIVER: overlay2  
+  DOCKER_TLS_CERTDIR: ""
+
+
+cache:
+    paths:
+        - .m2/repository/
+        - target/
+
+stages:
+  - deploy
+
+deploy:
+    image: maven:latest
+    stage: deploy
+    script:
+        - mvn package
+    tags: 
+        - mmbbs 
+    only:
+        - master
+    artifacts:
+        paths:
+            - target/evplan.jar
+
+

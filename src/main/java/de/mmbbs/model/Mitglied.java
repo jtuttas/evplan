@@ -3,8 +3,14 @@ package de.mmbbs.model;
 
 
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import de.mmbbs.menu.ConsoleColors;
 
@@ -56,4 +62,41 @@ public class Mitglied {
         SimpleDateFormat dt = new SimpleDateFormat("dd.MM.yyyy");
         return id+":"+vorname+" "+nachname+ " (Geb. "+dt.format(gebDat)+") Mitglied seit "+ dt.format(seit);
     }
+
+
+    public int getAlter() {
+        LocalDate bith = gebDat.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        return Period.between(bith, LocalDate.now()).getYears();
+    }
+
+    public int getMitgliedsjahre() {
+        LocalDate s = seit.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        return Period.between(s, LocalDate.now()).getYears();
+    }
+
+
+
+    public double getBeitrag() {
+        int alter = this.getAlter();
+        int migliedsjahre = this.getMitgliedsjahre();
+        double beitrag=0;
+        if (alter < 18) {
+            beitrag=30.0;
+        }
+        else if (alter<=12) {
+            beitrag=15.0;
+        }
+        else {
+            beitrag=50.0;
+        }
+        if (migliedsjahre>5 && migliedsjahre<=15) {
+            beitrag=beitrag*0.9;
+        }
+        else if (migliedsjahre>15) {
+            beitrag=beitrag*0.8;
+        }
+        return beitrag;
+    }
+
+   
 }

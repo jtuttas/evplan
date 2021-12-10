@@ -20,7 +20,8 @@ public class Menue {
         System.out.println(ConsoleColors.BLACK_BOLD_BRIGHT+ "evPlan - die Vereinsverwaltung V0.1");
         if (s instanceof MainState) {
             System.out.println(ConsoleColors.YELLOW+"----------- Hauptmenu -------------"+ConsoleColors.GREEN);
-            System.out.println("("+cmd("B")+"enutzerverwaltung\r\n("+cmd("G")+")ruppenverwaltung\r\n("+cmd("X")+")Ende");
+            System.out.println("("+cmd("B")+"enutzerverwaltung\r\n("+cmd("G")+")ruppenverwaltung\r\n("
+                    + cmd("R") + ")echnung drucken\r\n("+cmd("X")+")Ende");
         }
         if (s instanceof BenutzerState) {
             System.out.println(ConsoleColors.YELLOW +"------- Benutzerverwaltung --------"+ ConsoleColors.GREEN);

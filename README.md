@@ -5,8 +5,8 @@ Eine beispielhafte Java Konsolenanwendung einer simplen Vereinsverwaltung, um mi
 
 Im Verzeichnis **doc** befinden sich zahlreiche Dokumente für die Unterrichtsgestaltung. hier zu finden ist auch das [Lastenheft](doc/Lastenheft_evplan.pdf).
 
-##
-Das Starten der Anwendung kann über das über eine CI/CD Pipeline erzeugte jar File erfolgen. Im gleichen Verzeichnis muss sich auch die sqlite Datenbank **evplan.db** befinden!
+## Download
+Die Anwendung kann über diesen [link](https://service.joerg-tuttas.de:82/root/evplan/-/jobs/artifacts/master/download?job=deploy) herunter geladen werden. Nach dem Entpacken des Archives kann die Anwendung wie folgt gestartet werden.
 ```
-java -jar evplan-1.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar target/evplan-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```

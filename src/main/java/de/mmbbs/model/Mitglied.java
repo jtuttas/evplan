@@ -48,7 +48,7 @@ public class Mitglied {
         this.gebDat = gebDat;
     }
     public void setNachname(String nachname) {
-        this.nachname = nachname;
+        nachname = nachname;
     }
     public void setSeit(Date seit) {
         this.seit = seit;
@@ -70,7 +70,7 @@ public class Mitglied {
     }
 
     public int getMitgliedsjahre() {
-        LocalDate s = gebDat.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate s = seit.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         return Period.between(s, LocalDate.now()).getYears();
     }
    

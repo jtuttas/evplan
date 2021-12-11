@@ -1,0 +1,23 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>50</x><y>110</y><w>300</w><h>330</h></coordinates><panel_attributes>Mitglied
+--
+- id:int
+- nachname:String
+- vorname: String
+- gebDat: Date
+- seit:Date
+--
++  Mitglied(id:int,n:String,v:String,gd:Date,s:Date)
++ getId():int
++ getGebDat():Date
++ getNachname():String
++ getVorname():String
++ getSeit():Date
++ setGebDat(gebDat:Date):void
++ setNachname(nachname:String).void
++ setSeit(seit:Date):void
++ setVorname(vorname:String):void
++ toString():void
++ getAlter():int
++ getMitgliedsjahre():int
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

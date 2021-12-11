@@ -76,7 +76,7 @@ public class MainState implements evPlanState {
         System.console().readLine();
     }
 
-    public double getBeitrag(Mitglied m) {
+    private double getBeitrag(Mitglied m) {
         int alter = m.getAlter();
         int migliedsjahre = m.getMitgliedsjahre();
         double beitrag = 0;

@@ -6,7 +6,7 @@
 - gebDat: Date
 - seit:Date
 --
-+  Mitglied(id:int,n:String,v:String,gd:Date,s:Date)
++ Mitglied(id:int,n:String,v:String,gd:Date,s:Date)
 + getId():int
 + getGebDat():Date
 + getNachname():String

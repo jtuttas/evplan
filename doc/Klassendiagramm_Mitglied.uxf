@@ -16,7 +16,7 @@
 + setNachname(nachname:String).void
 + setSeit(seit:Date):void
 + setVorname(vorname:String):void
-+ toString():void
++ toString():String
 + getAlter():int
 + getMitgliedsjahre():int
 

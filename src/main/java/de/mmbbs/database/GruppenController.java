@@ -50,7 +50,7 @@ public class GruppenController {
     }
 
     public void deleteGruppe(int id) throws SQLException {
-        String statement = "delete from gruppe where gid=" + id;
+        String statement = "delete from gruppe where gid=1";
         st.execute(statement);
     }
 

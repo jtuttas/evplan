@@ -20,7 +20,7 @@ public class DBManager {
 
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:evplan.db");
+            c = DriverManager.getConnection("jdbc:sqlite:evplan.sqlite");
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);

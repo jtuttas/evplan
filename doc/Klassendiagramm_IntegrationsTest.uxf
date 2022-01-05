@@ -1,0 +1,73 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLClass&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;50&lt;/x&gt;&lt;y&gt;110&lt;/y&gt;&lt;w&gt;300&lt;/w&gt;&lt;h&gt;330&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;Mitglied
+--
+- id:int
+- nachname:String
+- vorname: String
+- gebDat: Date
+- seit:Date
+--
++ Mitglied(id:int,n:String,v:String,gd:Date,s:Date)
++ getId():int
++ getGebDat():Date
++ getNachname():String
++ getVorname():String
++ getSeit():Date
++ setGebDat(gebDat:Date):void
++ setNachname(nachname:String).void
++ setSeit(seit:Date):void
++ setVorname(vorname:String):void
++ toString():void
++ getAlter():int
++ getMitgliedsjahre():int
+
+&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;</help_text><element><id>UMLClass</id><coordinates><x>80</x><y>120</y><w>260</w><h>160</h></coordinates><panel_attributes>GruppenController
+--
+- st:Statement
+--
++ getGruppen():ArrayList&lt;Gruppe&gt;
++ getGruppen(m:Mitglied):ArrayList&lt;Gruppe&gt;
++ getGruppe(id:int):Gruppe
++ deleteGruppe(id:int):void
++ addGruppe(g:Gruppe):void
++ setGruppe(g:Gruppe):void
++ addMember(m:Mitglied,g:Gruppe):void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>140</y><w>200</w><h>140</h></coordinates><panel_attributes>DBManager
+--
+_- instance:DBManager_
+- c:Connection
+--
+- DBManager()
++ getConnection():Connection
+_+ getInstance():DBManager_
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>140</y><w>120</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>310</y><w>300</w><h>330</h></coordinates><panel_attributes>Mitglied
+--
+- id:int
+- nachname:String
+- vorname: String
+- gebDat: Date
+- seit:Date
+--
++ Mitglied(id:int,n:String,v:String,gd:Date,s:Date)
++ getId():int
++ getGebDat():Date
++ getNachname():String
++ getVorname():String
++ getSeit():Date
++ setGebDat(gebDat:Date):void
++ setNachname(nachname:String).void
++ setSeit(seit:Date):void
++ setVorname(vorname:String):void
++ toString():String
++ getAlter():int
++ getMitgliedsjahre():int
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>310</y><w>280</w><h>160</h></coordinates><panel_attributes>Gruppe
+--
+- id:int
+- bezeichnung:String
+--
++ Gruppe(id:int,bez:String)
++ getId():int
++ getBezeichnung():String
++ setBezeichnung(bezeichnung:String):void
++ toString():String</panel_attributes><additional_attributes></additional_attributes></element></diagram>

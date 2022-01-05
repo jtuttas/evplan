@@ -65,7 +65,7 @@ public class MainState implements evPlanState {
             Calendar c = new GregorianCalendar();
             c.setTime(new Date());
             System.out.println("Beitragsjahr: "+c.get(Calendar.YEAR));
-            System.out.println("\r\rIhr Jahresbeitrag beträgt: "+getBeitrag(m)+" EUR\r\n");
+            System.out.println("\r\rIhr Jahresbeitrag beträgt: "+getBeitrag(m.getAlter(),m.getMitgliedsjahre())+" EUR\r\n");
             
         } catch (NumberFormatException pe) {
             Menue.printErr("Fehlerhafte Eingabe");
@@ -76,9 +76,7 @@ public class MainState implements evPlanState {
         System.console().readLine();
     }
 
-    private double getBeitrag(Mitglied m) {
-        int alter = m.getAlter();
-        int migliedsjahre = m.getMitgliedsjahre();
+    private double getBeitrag(int alter, int mitgliedsjahre) {
         double beitrag = 0;
         if (alter < 18) {
             beitrag = 30.0;
@@ -87,9 +85,9 @@ public class MainState implements evPlanState {
         } else {
             beitrag = 50.0;
         }
-        if (migliedsjahre > 5 && migliedsjahre <= 15) {
+        if (mitgliedsjahre > 5 && mitgliedsjahre <= 15) {
             beitrag = beitrag * 0.9;
-        } else if (migliedsjahre > 15) {
+        } else if (mitgliedsjahre > 15) {
             beitrag = beitrag * 0.8;
         }
         return beitrag;

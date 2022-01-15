@@ -27,7 +27,7 @@ deploy:
     artifacts:
         paths:
             - target/evplan-1.0-SNAPSHOT-jar-with-dependencies.jar
-            - evplan.db
+            - evplan.sqlite 
             - start.bat 
 
 

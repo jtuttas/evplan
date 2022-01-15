@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 import de.mmbbs.database.GruppenController;
-import de.mmbbs.database.MemberController;
+import de.mmbbs.database.istIn;
 import de.mmbbs.database.MitgliedController;
 import de.mmbbs.menu.BenutzerState;
 import de.mmbbs.menu.GruppenState;

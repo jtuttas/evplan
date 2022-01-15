@@ -64,7 +64,7 @@ public class istIn {
         }
             }
 
-    public void removeMember(Mitglied m,Gruppe g) {
+    public void entferneMember(Mitglied m,Gruppe g) {
         try {
         // Laden des JDBC Treibers
         Class.forName("org.sqlite.JDBC");

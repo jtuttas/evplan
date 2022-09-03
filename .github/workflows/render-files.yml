@@ -61,12 +61,15 @@ jobs:
       run: sudo apt-get install umlet
     - name: render files
       run: 'sh ./config/render_umlet.sh'
+      
 
   converttopdf:
     name: Build PDF with Pandoc
     needs: render_umlet
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Cache files 
         uses: actions/cache@v2
         env:

@@ -1,7 +1,7 @@
 # Whitebox (Codeüberdeckungs-) Tests
 Whitebox Analyse ist ein formelles Analyseverfahren, bei dem der Entwickler den Code vorliegen hat. Über die speziellen Funktionen des Programms in Form einer Spezifikation muss er nicht zwingend informiert sein. Das Ergebnis eines Whitebox Testes erlaubt aber Aussagen über die Qualität der Testfälle eines Blackbox / Unittest auszusagen. Ziel ist es eine Codeüberdeckung von 100% zu erreichen. 
 
-Aus der Spezifikation wurden dabei ggf. schon Testfälle abgeleitet. Der Codeüberdeckungstest prüft dabei nach, ob diese Testfälle hinreichend sind, un der gesamte Code abgedeckt (also geprüft) ist.
+Aus der Spezifikation wurden dabei ggf. schon Testfälle abgeleitet. Der Codeüberdeckungstest prüft dabei nach, ob diese Testfälle hinreichend sind, und der gesamte Code abgedeckt (also geprüft) ist.
 
 ![Anforderungs- / Codeüberdeckung](whitebox2.png)
 
@@ -119,10 +119,10 @@ Es existieren also die Zweige Z1 bis Z9. Bei der Zweigüberdeckung gilt es nun z
 |Testwerte|erreichte Blöcke |Ergebnis|
 |--|--|--|
 |a=3|Z1,Z2,Z4| ok|
-|a=4|Z1,Z2,Z3,Z5,Z6,Z8,9| ok|
+|a=4|Z1,Z2,Z3,Z5,Z6,Z8,Z9,Z4| ok|
 |?| nicht erreichbar Z7 | Fehler|
 
-Wie sich bei der Untersuchung herausstellt, sind die Zweige Z7 und Z9 nicht zu erreichen. Die Zweigüberdeckung beträgt
+Wie sich bei der Untersuchung herausstellt, ist der Zweig Z7 nicht zu erreichen. Die Zweigüberdeckung beträgt
 
 $C_{Zweig} = \frac{8}{9} = 88,8\%$
 

@@ -1,5 +1,9 @@
-# Whitebox Tests
-Whitebox Analyse ist ein formelles Analyseverfahren, bei dem der Entwickler den Code vorliegen hat. Über die speziellen Funktionen des Programms in Form einer Spezifikation muss er nicht informiert sein.
+# Whitebox (Codeüberdeckungs-) Tests
+Whitebox Analyse ist ein formelles Analyseverfahren, bei dem der Entwickler den Code vorliegen hat. Über die speziellen Funktionen des Programms in Form einer Spezifikation muss er nicht zwingend informiert sein. Das Ergebnis eines Whitebox Testes erlaubt aber Aussagen über die Qualität der Testfälle eines Blackbox / Unittest auszusagen. Ziel ist es eine Codeüberdeckung von 100% zu erreichen. 
+
+Aus der Spezifikation wurden dabei ggf. schon Testfälle abgeleitet. Der Codeüberdeckungstest prüft dabei nach, ob diese Testfälle hinreichend sind, un der gesamte Code abgedeckt (also geprüft) ist.
+
+![Anforderungs- / Codeüberdeckung](whitebox2.png)
 
 ## von Anweisungen, Blöcken, Zweigen und Pfaden
 Ein Programm wird dabei betrachtet als eine Reihe von Anweisungen. Diese Anweisungen bilden Blöcke, die durch Kontrollflusselemente wie Bedingungen und Schleifen aufgeteilt wird in verschiedene Zweige und Pfade.
@@ -88,6 +92,38 @@ $C_{Block} = \frac{5}{6}$
 Der Tester hat also formell nachgewiesen, dass keine Blocküberdeckung von 1 erreicht werden kann, d.h. dass der Code fehlerhaft ist.
 
 ## Zweigüberdeckung
-
+Unter einem Zweig versteht man eine gerichtete Kante eines Kontrollflussgraphen (z.B. durch Bedingungen oder Schleifen). Wichtig dabei ist, dass alle Kanten erfasst werden, also z.B. eine Bedingung, die keinen else Zweig hat, besitzt dennoch zwei Kanten. Ebenso bei kopfgesteuerten Schleifen, denn hier kann es sein, dass die Schleife durchlaufen wird, oder aufgrund der Bedingung gar nicht durchlaufen wird.
 
 $C_{Zweig} = \frac{Anzahl der ausgeführten Zweige}{Anzahl der Zeige}$
+
+Der folgende Code kann z.B. wie folgt als Graph dargestellt werden.
+
+```java
+    public static int calc(int a) {
+        int b=0;
+        while (a%4==0) {
+            a=a+2;
+            if (a%2==0) {
+                b=b+a;
+            }
+        }
+        return b;
+    }
+```
+
+![Zweigüberdeckung](bspZweigueberdeckung.png)
+
+Es existieren also die Zweige Z1 bis Z9. Bei der Zweigüberdeckung gilt es nun zu prüfen ob alle Zweige zu erreichen sind.
+
+
+|Testwerte|erreichte Blöcke |Ergebnis|
+|--|--|--|
+|a=3|Z1,Z2,Z4| ok|
+|a=4|Z1,Z2,Z3,Z5,Z6,Z8,9| ok|
+|?| nicht erreichbar Z7 | Fehler|
+
+Wie sich bei der Untersuchung herausstellt, sind die Zweige Z7 und Z9 nicht zu erreichen. Die Zweigüberdeckung beträgt
+
+$C_{Zweig} = \frac{8}{9} = 88,8\%$
+
+Ein Anweisungs- oder Blocküberdeckungstest hätte in diesem Fall jedoch eine Überdeckung von 100% ergeben.

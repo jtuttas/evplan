@@ -1,5 +1,7 @@
 package de.mmbbs.model;
 
+import java.io.ObjectInputStream.GetField;
+
 public class Gruppe {
 
     private int id;
@@ -8,6 +10,10 @@ public class Gruppe {
     public Gruppe(int id, String bez) {
         this.id = id;
         bezeichnung = bez;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {

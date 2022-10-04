@@ -55,7 +55,7 @@ public class GruppenController {
     }
 
     public void addGruppe(Gruppe g) throws SQLException {
-        String statement = "insert into gruppe(gid,bezeichnung) VALUES (" + g.getId() + ",'" + g.getBezeichnung()
+        String statement = "insert into gruppe(bezeichnung) VALUES ('" + g.getBezeichnung()
                 + "')";
         st.execute(statement);
         ResultSet rs = st.executeQuery("select * from gruppe order by gid desc limit 1");

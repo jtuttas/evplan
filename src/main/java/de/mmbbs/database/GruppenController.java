@@ -24,7 +24,9 @@ public class GruppenController {
         ArrayList<Gruppe> results = new ArrayList<>();
         ResultSet rs = st.executeQuery("select * from gruppe");
         while (rs.next()) {
-            results.add(new Gruppe(rs.getInt("gid"), rs.getString("bezeichnung")));
+            Gruppe g = new Gruppe(rs.getString("bezeichnung"));
+            g.setId(rs.getInt("gid"));
+            results.add(g);
         }
         return results;
     }
@@ -33,7 +35,9 @@ public class GruppenController {
         ArrayList<Gruppe> results = new ArrayList<>();
         ResultSet rs = st.executeQuery("select gruppe.gid,gruppe.bezeichnung from gruppe join ist_in on gruppe.gid=ist_in.gid where ist_in.mid="+m.getId());
         while (rs.next()) {
-            results.add(new Gruppe(rs.getInt("gid"), rs.getString("bezeichnung")));
+            Gruppe g = new Gruppe( rs.getString("bezeichnung"));
+            g.setId(rs.getInt("gid"));
+            results.add(g);
         }
         return results;
     }
@@ -43,7 +47,8 @@ public class GruppenController {
 
         ResultSet rs = st.executeQuery("select * from gruppe where gid=" + id);
         while (rs.next()) {
-            result = new Gruppe(rs.getInt("gid"), rs.getString("bezeichnung"));
+            result = new Gruppe(rs.getString("bezeichnung"));
+            result.setId(rs.getInt("gid"));
         }
 
         return result;

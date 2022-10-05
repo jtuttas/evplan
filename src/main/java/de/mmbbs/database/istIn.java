@@ -23,7 +23,11 @@ public class istIn {
                     "select gruppe.gid,bezeichnung from mitglied inner join ist_in on mitglied.mid=ist_in.mid inner join gruppe on ist_in.gid=gruppe.gid where mitglied.mid="
                             + m.getId());
             // lese solange was da ist
-            while (rs.next()) a.add(new Gruppe(rs.getInt("gid"), rs.getString("bezeichnung")));            
+            while (rs.next()) {
+                Gruppe g = new Gruppe(rs.getString("bezeichnung"));
+                g.setId(rs.getInt("gid"));
+                a.add(g);
+            }
         } catch (Exception e) {
         System.err.println(e.getClass().getName() + ": " + e.getMessage());
         System.exit(0);
@@ -42,7 +46,11 @@ public class istIn {
                 "select mitglied.mid,nachname,vorname,gebDat,seit from mitglied inner join ist_in on mitglied.mid=ist_in.mid inner join gruppe on ist_in.gid=gruppe.gid where mitglied.mid="
                         + g.getId());
         // Lese solange was da ist
-        while (rs.next()) a.add(new Mitglied(rs.getInt("mid"), rs.getString("nachname"), rs.getString("vorname"),new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("gebDat")),new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("seit"))));
+        while (rs.next()) {
+            Mitglied m = new Mitglied(rs.getString("nachname"), rs.getString("vorname"),new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("gebDat")),new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("seit")));
+            m.setId(rs.getInt("mid"));
+            a.add(m);
+        }
         
     }
     catch (Exception e) {

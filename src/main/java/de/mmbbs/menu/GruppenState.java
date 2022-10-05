@@ -102,7 +102,7 @@ public class GruppenState implements evPlanState{
         System.out.print("Name der Gruppe?: ");
         String gn = System.console().readLine();
         try {
-            Gruppe g = new Gruppe(0,gn);
+            Gruppe g = new Gruppe(gn);
             gc.addGruppe(g);
             System.out.println("Gruppe " + g.getBezeichnung() + " angelegt!");
 

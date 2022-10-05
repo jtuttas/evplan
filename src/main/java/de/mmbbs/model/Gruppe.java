@@ -7,8 +7,7 @@ public class Gruppe {
     private int id;
     private String bezeichnung;
 
-    public Gruppe(int id, String bez) {
-        this.id = id;
+    public Gruppe(String bez) {
         bezeichnung = bez;
     }
 

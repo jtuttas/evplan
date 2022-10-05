@@ -21,12 +21,15 @@ public class Mitglied {
     private Date gebDat;
     private Date seit;
 
-    public Mitglied(int id, String n, String v, Date gd, Date s) {
-        this.id=id;
+    public Mitglied(String n, String v, Date gd, Date s) {
         nachname=n;
         vorname=v;
         gebDat=gd;
         seit=s;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {

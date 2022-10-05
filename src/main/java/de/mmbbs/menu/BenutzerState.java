@@ -196,7 +196,7 @@ public class BenutzerState implements evPlanState {
             Date gebDat = sdf.parse(System.console().readLine());
             System.out.print("Mitglied seit (yyyy-MM-dd)?: ");
             Date since = sdf.parse(System.console().readLine());
-            Mitglied m = new Mitglied(0, nn, vn, gebDat, since);
+            Mitglied m = new Mitglied(nn, vn, gebDat, since);
             mc.addMitglied(m);
             System.out.println("Mitglied "+m.toString()+" angelegt!");
 

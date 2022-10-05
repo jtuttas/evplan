@@ -28,9 +28,12 @@ public class MitgliedController {
         while (rs.next()) {
 
             try {
-                results.add(new Mitglied(rs.getInt("mid"), rs.getString("nachname"), rs.getString("vorname"),
+                Mitglied m =new Mitglied(rs.getString("nachname"), rs.getString("vorname"),
                         new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("gebDat")),
-                        new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("seit"))));
+                        new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("seit")));
+                m.setId(rs.getInt("mid"));
+                results.add(m);
+
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -44,9 +47,11 @@ public class MitgliedController {
         ResultSet rs = st.executeQuery("select * from mitglied where mid=" + id);
         while (rs.next()) {
             try {
-                result = new Mitglied(rs.getInt("mid"), rs.getString("nachname"), rs.getString("vorname"),
+                result = new Mitglied(rs.getString("nachname"), rs.getString("vorname"),
                         new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("gebDat")),
                         new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("seit")));
+                result.setId(rs.getInt("mid"));
+
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -65,6 +70,11 @@ public class MitgliedController {
         String statement = "insert into mitglied(nachname,vorname,gebDat,seit) VALUES ('" + m.getNachname() + "','"
                 + m.getVorname() + "','" + sd.format(m.getGebDat()) + "','" + sd.format(m.getSeit()) + "')";
         st.execute(statement);
+
+        ResultSet rs = st.executeQuery("select * from mitglied order by mid desc limit 1");
+        while (rs.next()) {
+            m.setId(rs.getInt("mid"));
+        }
     }
 
     public void setMitglied(Mitglied m) throws SQLException {

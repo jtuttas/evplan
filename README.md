@@ -1,4 +1,4 @@
-# evPlan - die Vereinsverwaltung
+# evPlan - die Vereinsverwaltung!
 
 Eine beispielhafte Java Konsolenanwendung einer simplen Vereinsverwaltung, um mit den Schülerinnen und Schülern Blackbox, Whitebox, Unit und Integrationstests zu üben.
 

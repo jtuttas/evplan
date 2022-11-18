@@ -1,4 +1,4 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>50</x><y>110</y><w>300</w><h>330</h></coordinates><panel_attributes>Mitglied
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>50</x><y>110</y><w>300</w><h>330</h></coordinates><panel_attributes>Mitglied
 --
 - id:int
 - nachname:String
@@ -6,8 +6,9 @@
 - gebDat: Date
 - seit:Date
 --
-+ Mitglied(id:int,n:String,v:String,gd:Date,s:Date)
++ Mitglied(n:String,v:String,gd:Date,s:Date)
 + getId():int
++ setId(id:int):void
 + getGebDat():Date
 + getNachname():String
 + getVorname():String

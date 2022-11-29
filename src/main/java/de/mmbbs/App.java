@@ -66,6 +66,10 @@ public final class App implements evPlanState{
         
     }
 
+
+    /**
+     * Hauptprogramm
+     */
     public static void main(String[] args) {
         new App();
     }

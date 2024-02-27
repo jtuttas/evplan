@@ -1,5 +1,5 @@
 public class getBeitrag {
-    private static double getBeitrag(int alter, int mitgliedsjahre) {
+    public static double getBeitrag(int alter, int mitgliedsjahre) {
         double beitrag = 0;
         if (alter < 18) {
             beitrag = 30.0;
